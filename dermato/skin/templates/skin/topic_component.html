@@ -1,0 +1,5 @@
+<div class="container">
+    {% for topic in topics %}
+        <a class="a" href="{% url 'forum' %}?q={{topic.name}}"> <b>{{topic.name}}</b> | </a>
+    {% endfor %}
+</div>

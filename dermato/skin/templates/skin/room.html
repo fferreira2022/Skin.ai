@@ -1,0 +1,69 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container card rounded-3 p-4" id="room_style">
+    <div class="row">
+        <div class="container col-md-8">
+            <br>
+            <tr>Le {{room.created}} @<b>{{room.host}}</b> a posté:<br><br><p id="room_name_style"><b>{{room.name}}</b></p></tr>
+            <p>{{room.description}}</p>
+            <hr class="hr_style">
+            <div class="row comment-wrapper">
+                <h6 style="color: gold;">Réponses:</h6>
+                {% for message in room_messages %}
+                    <div class="room_messages_box">
+                        <small>@<b>{{message.user}}</B> a répondu il y a {{message.created|timesince}}:<br></br>{{message.body}}<br></br></small> {# timesince permet d'afficher le temps écoulé depuis la création du poste plutôt que la date de création#}
+                        {% if request.user == message.user %} {# si l'utilisateur cherchant à supprimer le message en est l'auteur alors le bouton delete s'affiche#}
+                            <a class="btn btn-outline-danger btn-sm a link_style" href="{% url 'delete-message' message.id %}">Supprimer</a>
+                        {% endif %}
+                       <hr>
+                    </div>
+                    <br>
+                {% empty %}
+                    <div class="container alert alert-light room_messages_box">
+                        <p>Aucun résultat trouvé.</p>
+                    </div>
+                {% endfor %}
+            </div>
+    
+            {% if request.user.is_authenticated %} {# seuls les utilisateurs connectés peuvent voir la zone input pour les commentaire #}
+                <div class="comment-form">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <span>Votre réponse:</span>
+                        <div class="input-group">
+                            <textarea class="form-control" aria-label="With textarea" name="body"></textarea>
+                            <input type="submit" class="btn btn-outline-warning" value="Envoyer"></input>
+                        </div>
+                        <br></br>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+        <div class="container col-md-2">
+            <br>
+            <h6 style="color: gold;">Participants:</h6>
+            <hr>
+            {% for user in participants %}
+                <ul>
+                    <a class="a" href="{% url 'user-profile' user.id %}"><p class="user_name">@{{user.username}}</p></a>
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container w-75" id="room_pagination_style">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if room_messages.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{room_messages.previous_page_number}}">&laquo</a></li>
+                {% endif %}
+                <li class="page-item disabled"><a class="page-link" href="#">{{room_messages.number}}</a></li>
+                {% if room_messages.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{room_messages.next_page_number}}">&raquo</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{room_messages.paginator.num_pages}}">{{room_messages.paginator.num_pages}}</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock content %}

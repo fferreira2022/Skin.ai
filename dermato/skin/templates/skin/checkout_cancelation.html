@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container w-75 alert alert-danger" role="alert" id="checkout_cancelation">
+    <p class="text-center text-white">Le paiement a été annulé.</p>
+    <div class="text-center">
+        <a class="a" href="{% url 'home' %}"><p>&laquo Retour</p></a>
+    </div>
+</div>
+{% endblock content %}
+
+  

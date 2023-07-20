@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block content %}
+<form method="POST" class="container card rounded-3 p-3" id="register_form">
+    <h2 class="text-uppercase text-center mb-5">Créer un compte</h2>
+    {% csrf_token %}
+    {% for field in form %}
+        {{field}}
+        <br>
+    {% endfor %}
+    <br>
+    <button type="submit" class="d-flex btn btn-outline-warning w-100 justify-content-center">S'inscrire</button>
+    <br>
+    <div class="col text-center">
+        <p>Vous avez déja un compte?<a class="btn w-100 a link_style" href="{% url 'login' %}">&raquo Connectez-vous</a></p>
+    </div>
+</form>
+{% endblock content %}
+

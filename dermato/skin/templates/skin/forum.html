@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container rounded-3 p-4" id="forum_main_div">
+    <nav class="navbar rounded-3 bg-transparent" id="forum_navbar">
+        <div class="container-fluid">
+          <div class="navbar-item">
+            {% include 'skin/topic_component.html' %}
+          </div>
+        </div>
+    </nav>
+    <br>
+    <div class="card p-4" id="forum_style">
+        <div class="card-body">
+            <center><h4 id="forum_title">Fils de discussion récents:</h4></center>
+            <hr>
+            {% include 'skin/feed_component.html' %}
+            <br>
+            <div class="container">
+                <a class="btn btn-outline-warning btn-sm a link_style" href="{% url 'create-room' %}">Créer un fil de discussion</a>
+            </div>
+            <br></hr>
+            <nav aria-label="Page navigation example" class="container">
+                <ul class="pagination">
+                    {% if rooms.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{rooms.previous_page_number}}">&laquo</a></li>
+                    {% endif %}
+                    <li class="page-item disabled"><a class="page-link" href="#">{{rooms.number}}</a></li>
+                    {% if rooms.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{rooms.next_page_number}}">&raquo</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{rooms.paginator.num_pages}}">{{rooms.paginator.num_pages}}</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% comment %} <div class="container border recent_messages">
+        <br>
+        {% include 'skin/activity_component.html' %}
+    </div>
+    <br> {% endcomment %}
+</div>
+{% endblock content %}
+
+
+

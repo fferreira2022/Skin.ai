@@ -1,0 +1,18 @@
+<div class="container">
+    {% for room in rooms %}
+        <div>
+            <a class="a" href="{% url 'user-profile' room.host.id %}"><p class="user_name">@{{room.host.username}} a créé dans {{room.topic.name}} le {{room.created}} le fil de discussion:</p></a>
+            <h6><a class="a" href="{% url 'room' room.id %}"><p class="room_title">{{room.name}}</p></h6>
+            {%if request.user == room.host %} {# les boutons éditer et supprimer ne sont visibles de l'utilisateur que si celui-ci est le créateur du topic#}
+                <a class="btn btn-outline-light btn-sm a link_style" href="{% url 'update-room' room.id %}">Editer</a>
+                <a class="btn btn-outline-danger btn-sm a link_style" href="{% url 'delete-room' room.id %}">Supprimer</a>
+            {% endif %}
+            <hr class="hr_style">
+        </div>
+    {% empty %}
+        <div class="container alert alert-light text-center">
+            <p>Aucun résultat trouvé.</p>
+        </div>
+    {%endfor%}
+    <br>
+</div>

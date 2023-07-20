@@ -1,0 +1,21 @@
+<div class="container shadow-2-strong">
+    <h5 class="text-center" style="color: #ffc107;">Dernières participations sur le forum</h5>
+    <hr>
+    {% for message in room_messages %}
+        <div class="container">
+            <small><a class="a" href="{% url 'user-profile' message.user.id %}">@{{message.user}}</a></small>
+            <small>a répondu à "{{message.room}}" il y a {{message.created|timesince}}</small>
+            
+            <p>{{message}}</p>
+            {% if request.user == message.user %} {# si l'utilisateur cherchant à supprimer le message en est l'auteur alors le bouton delete s'affiche#}
+                <a class="btn btn-outline-danger btn-sm a link_style" href="{% url 'delete-message' message.id %}">Supprimer</a>
+            {% endif %}
+        </div>
+        <hr>
+    {% empty %}
+        <div class="container alert alert-light">
+            <p class="text-center">Aucun résultat trouvé.</p>
+        </div>
+    {% endfor %}
+</div>
+

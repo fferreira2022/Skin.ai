@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container card mb-3 p-4" id="create_room">
+    <form method='POST' class="form-control" id="create_room_style">
+        {% csrf_token %}
+        <fieldset class="">
+            {{form.topic.label}}
+            {{form.topic}}
+            <br>
+            {{form.name}}
+            <br>
+            {{form.description}}
+            <br>
+            <input type="submit" value="Créer fil de discussion" class="btn btn-outline-warning a link_style"></input>
+        </fieldset>
+        <br>
+    </form>
+</div>
+<br>
+{% endblock content %}
+

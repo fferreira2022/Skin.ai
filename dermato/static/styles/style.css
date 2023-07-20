@@ -1,0 +1,556 @@
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.messages {
+  display: flex;
+  background-color: #fdfdfd;
+  color: red;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 20px;
+}
+
+/********************************/
+.home_page {
+  height: 70%;
+}
+
+#homepage_main_div {
+  margin-top: 2%;
+}
+
+#main_title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#parent {
+  position: relative;
+}
+
+#picture_main_div {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 85rem !important;
+}
+
+#try_now_div {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 75rem !important;
+  justify-items: center;
+}
+
+#skin_lesion_pictures {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 75rem !important;
+}
+
+@media (max-width: 768px) {
+  .text-overlay {
+    font-size: 14px;
+    /* Additional styles for smaller screens */
+  }
+}
+
+#information_div {
+  margin-bottom: 5%;
+  max-width: 50rem !important;
+  font-size: 20px;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid ;
+}
+
+#skin_lesion_pictures_div {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/********************************/
+
+#forum_main_div {
+  margin-top: 2%;
+  max-width: 50rem !important;
+}
+
+.forum_style {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#forum_style {
+  background-color: #2b3035 !important;
+  color: white;
+  margin-bottom: 5%;
+}
+
+#forum_title {
+  color: white;
+  margin-bottom: 1%;
+}
+
+#forum_navbar {
+  text-decoration: none;
+}
+
+#room_style {
+  background-color: #2b3035 !important;
+  color: white;
+  margin-top: 5% !important;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 50rem !important;
+  max-height: 50rem !important;
+}
+#room_pagination_style {
+  max-width: 50rem;
+}
+.room_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.room_subcontainer {
+  width: 45%;
+}
+
+
+.recent_messages {
+  margin-left: 1%;
+  width: 52%;
+}
+
+#delete_message {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+#room_name_style {
+  color: antiquewhite;
+}
+
+#create_room {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 2%;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem;
+}
+
+#create_room_style {
+  background-color: #2b3035 !important;
+  color: antiquewhite;
+}
+.a {
+  text-decoration: none;
+  font-size: 16px;  
+  color:#dddddd;
+}
+
+.user_name {
+  font-size: 15px;
+  color: aliceblue;
+}
+
+.room_title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: antiquewhite;
+}
+
+.topic_style {
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#topic_container {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#upload_image_div{
+  background-color: #2b3035;
+  color: white;
+  margin-top: 2% !important;
+  margin-bottom: 10% !important;
+  max-width: 35rem !important;
+  max-height: 35rem !important;
+}
+#upload_image_legend {
+  margin-top: 10%;
+  max-width: 35rem !important;
+  max-height: 35rem !important;
+  border: none;
+}
+
+.footer_style {
+  width: 100%;
+  text-decoration: none;
+  margin-top: auto;
+  font-size: large;
+}
+
+.hr_style {
+  color: #ffc107;
+}
+
+.link_style {
+  color: white;
+  text-decoration: none;
+}
+
+.buttons_style {
+  color: white !important;
+  text-decoration: none;
+}
+
+.navbar-nav > li {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.greeting_message {
+  color: white;
+  font-size: 15px;
+}
+
+.dropdown_style {
+  background-color: white;
+  text-align: center !important;
+  padding: 5px;
+  color: black !important;
+}
+
+.room_container_border {
+  border: 1px solid;
+}
+
+#user_profile_main_div {
+  justify-content: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#profile-container_1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem;
+}
+
+#profile-container_2 {
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem !important;
+}
+
+#profile-container_3 {
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem !important;
+}
+
+#update_profile-container {
+  margin-top: 5% !important;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem !important;
+}
+
+
+#result-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 35rem !important;
+  max-height: 35rem !important;
+}
+
+#result_profile_page {
+  margin-top: 5%;
+  margin-bottom: 3%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 2%;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem !important;
+}
+
+.text_area {
+  height: 50px;
+  width: 100%;
+  margin-top: -5px;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+#response {
+  white-space: pre-wrap;
+}
+
+#disclaimer_style {
+  margin-top: 6%;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem !important;
+}
+
+#about_style {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-items: center;
+  border: none;
+  font-size: large;
+  justify-content: space-around;
+}
+
+#faq_style {
+  margin-top: 6%;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem !important;
+}
+
+#contact_main_div{
+  border: none;
+  margin-top: 5% !important;
+  margin-bottom: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 50rem !important;
+  max-height: 50rem !important;
+}
+
+#contact_style {
+  margin-bottom: 6%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem;
+}
+
+#contact_page_legend {
+  margin-top: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 50rem !important;
+}
+
+.login_div {
+  margin-top: 3%;
+  margin-bottom: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 35rem !important;
+  background-color: #2b3035 !important;
+}
+
+
+
+#register_form {
+  margin-top: 3%;
+  margin-bottom: auto;
+  background-color: #2b3035 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 35rem !important;
+}
+
+.register_box {
+  background-color: #2b3035 !important;
+}
+
+.register_box h2 {
+  color: whitesmoke !important;
+}
+
+.register_box form {
+  background-color: #2b3035 !important;
+  color: whitesmoke !important;
+}
+
+.register_box p {
+  color: whitesmoke !important;
+}
+
+.register_box button {
+  background-color: #2b3035;
+}
+
+#password_reset_form {
+  margin-top: 8%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 8%;
+  color: white;
+  max-width: 35rem !important;
+}
+
+#password_reset_form_2 {
+  border: none !important;
+}
+
+#password_reset {
+  margin-top: 8%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 8%;
+  color: white;
+  max-width: 45rem !important;
+
+}
+
+#password_reset_2 {
+  border: none !important; 
+}
+
+
+#password_reset_sent {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content:flex-start;
+  align-content: center;
+  max-width: 50rem !important;
+}
+
+#password_reset_done {
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#checkout_process {
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border: none !important;
+}
+
+#checkout_success {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 50rem !important;
+}
+
+#checkout_cancelation{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 50rem !important;
+}
+
+#malignant {
+  background-color: rgb(255, 92, 92);
+}
+
+
+
+#chatbot_style {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #2b3035 !important;
+  color: white;
+  max-width: 50rem;
+}
+
+#chatbot_page_paragraph {
+  margin-top: 5%;
+}
+
+#chatbot_user_input {
+  height: 4rem !important;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2b3035;
+}
+
+.loader::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border: 15px solid #dddddd;
+  border-top-color: #ffc107;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#alert_messages {
+  margin-top: 5%;
+}
+
+#result-image {
+  max-width: 75%; /* ou toute autre valeur qui vous convient */
+  height: auto; /* pour maintenir les proportions de l'image */
+}

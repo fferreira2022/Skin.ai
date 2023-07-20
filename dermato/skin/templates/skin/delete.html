@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container card w-75 rounded-3" id="delete_message">
+    <center>
+        <form method ='POST' action="">
+            {% csrf_token %}
+            <br>
+            {# obj ci_dessous correspond à la variable qui se trouve dans la fonction deleteRoom dans views.py #} 
+            <p>Etes-vous sûr de vouloir supprimer "{{obj}}" ?</p> 
+            <a class="btn btn-outline-success btn-sm a link_style" href="{{request.META.HTTP_REFERER}}">Annuler</a>
+            <input type="submit" value="confirmer" class="btn btn-outline-danger btn-sm"/>
+            <br><br>
+        </form>
+    </center>
+</div>
+{% endblock content %}

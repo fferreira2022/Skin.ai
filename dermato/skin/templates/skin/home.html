@@ -1,0 +1,132 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{{ redirect_to_login_immediately }} {# <= étape 3 pour installer django_auto_logout #}
+<div class="container" id="homepage_main_div">
+    <h1 class="text-center text-light" id="main_title"><b>L'IA POUR ORIENTER LE DIAGNOSTIC</b></h1>
+    <hr>
+    <div class="container w-75" id="picture_main_div">
+        <div class="row">
+            <h5 class="text-warning">Comment ça fonctionne ?</h5>
+            <br></br>
+            <p>1. Prenez une photo dermatoscopique de la lésion ou du grain de beauté.</p>
+            <p>2. Soumettez la à nos algorithmes de machine learning. C'est tout !</p>
+        </div>
+        <div class="container text-bg-dark">
+            <img src="{% static '/images/home_picture.png' %}" class="img-fluid rounded mx-auto d-block"> {# la classe img-fluid de bootstrap rend les images responsive #}
+        </div>
+    </div>
+    <br></hr>
+    <div class="container w-75 row" id="try_now_div">
+        {% if request.user.is_authenticated %}
+            <div class="col-md-9">
+                <h4 class="text-center text-white">&raquo Le résultat d'analyse est délivré en moins d'une minute !</h4>
+            </div>
+            <div class="col-md-3">
+                <a class= "btn btn-outline-warning btn-sm" href="{% url 'upload-image' %}">Essayez maintenant</a>
+            </div>
+            <br>
+        {% else %}
+            <div class="col-md-9">
+                <h4 class="text-center text-white">&raquo Le résultat d'analyse est délivré en moins d'une minute !</h4>
+            </div>
+            <div class="col-md-3">
+                <a class= "btn btn-outline-warning btn-sm" href="{% url 'login' %}">Essayez maintenant</a>
+            </div>
+        {% endif %}
+    </div>
+    <br><hr>
+    <div class="container w-75 rounded-3 p-4 text-bg-dark">
+        <br>
+        <h6>Quelques statistiques sur le cancer de la peau:</h6>
+        <ul>
+            <li>D'après l'OMS, entre 2 et 3 millions de cancers de la peau non mélanocytaires sont enregistrés chaque année dans le monde</li>
+            <li>Chaque année aux Etats_Unis sont diagnostiqués plus de cancers de la peau que tous les autres cancers réunis</li>
+            <li>1 américain sur 5 développera un cancer de la peau avant ses 70 ans</li>
+            <li>Près de 80000 nouveaux cas chaque année en France d'après Santé Publique France, dont 70% de carcinomes basocellulaires et 15% de mélanomes</li>
+            <li>Lorsque le diagnostic est précoce, le taux de survie à 5 ans du mélanome est de 99%</li>
+        </ul>
+    </div>
+    <br><hr><br>
+    <figure class="container w-75 img-fluid" id="parent2">
+        <h4>Nos algorithmes de machine learning sont en mesure d'identifier 8 classes de lésions cutanées. Ces 8 classes représentent 95% des lésions cutanées connues.</h4>
+        <br>
+        <p>Ci-dessous une photo dermatoscopique de chacune de ces 8 classes. Les légendes en rouge indiquent une lésion maligne.</p>
+        <p>La classe <b>kératose bénigne</b> inclut la Kératose séborrhéique, la kératose lichénoïde, le lentigo solaire, les verrues virales.</p>
+        <p>La classe <b>lésion vasculaire</b> inclut l'angiome, l'angiokératome, le granulome pyogénique.</p>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/actinic_keratosis.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="malignant">
+                        <p class="card-text text-white">Kératose actinique</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/basal_cell_carcinoma.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="malignant">
+                        <p class="card-text text-white">Carcinome basocellulaire</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/benign_keratosis-like_lesion.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="">
+                        <p class="card-text">Kératose bénigne</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/dermatofibroma.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="">
+                        <p class="card-text">Dermatofibrome</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/melanoma.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="malignant">
+                        <p class="card-text text-white">Mélanome</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/nevus.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="">
+                        <p class="card-text">Naevus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/squamous_cell_carcinoma.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="malignant">
+                        <p class="card-text text-white">Carcinome squameux</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-3 mb-sm-0">
+                <div class="card h-100">
+                    <img src="{% static 'images/vascular_lesion.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body" id="">
+                        <p class="card-text">Lésion vasculaire</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </figure>
+    <br><hr><br>
+    <div class="container w-75 text-white" id="information_div">
+        <p>Pour plus d'informations concernant ces lésions cutanées ou une autre maladie de peau, veuillez vous adresser à notre dermatologue virtuel.</p>
+    </div>
+</div>
+{% endblock content %}
+

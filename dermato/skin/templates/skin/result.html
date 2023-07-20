@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="card w-75 rounded-3 p-3" id="result-container">
+    <center class="card-body">
+        <p>Photo analysée:</p>
+        <img src="{{ result.image.url }}" class="card-img-top" alt="Uploaded Image">
+        <br></br>
+        <p><b>Résultat:</b> {{result.body}}</p>
+    </center> 
+</div>
+{% endblock content %}

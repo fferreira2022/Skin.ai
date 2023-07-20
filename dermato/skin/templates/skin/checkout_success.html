@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+<br><br><br>
+<div class="container alert alert-success" role="alert" id="checkout_success">
+  <div class="text-center">
+    <h3>Skin.ai vous remercie pour votre paiment.</h3>
+    <a class="btn btn-ouline-light" href="{% url 'upload-image' %}">Procéder à l'analyse</a>
+  </div>
+</div>
+{% endblock content %}
+ 

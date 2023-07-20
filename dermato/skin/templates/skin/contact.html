@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container" id="contact_main_div">
+    <div class="card-text">
+        <p class="text-center text-white">Pour toute question, contactez-nous:</p>
+    </div>
+    <form method="POST" action="." id="contact_style" class="card rounded-3 p-3">
+        {% csrf_token %}
+        <p>Votre email</p>
+        {{form.from_email}}
+        <br></br>
+        <p>Objet du message</p>
+        {{form.subject}}
+        <br></br>
+        <p>Votre message</p>
+        {{form.message}}
+        <br></br>
+        <button type="submit" class="btn btn-outline-warning w-100">Envoyer</button>
+    </form>
+</div>
+{% endblock content %}

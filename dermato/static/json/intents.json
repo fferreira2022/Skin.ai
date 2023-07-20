@@ -1,0 +1,26 @@
+{"intents":[
+    {"tag": "salutations",
+    "patterns":["salut", "bonjour", "Comment ça va ?", "Comment vas-tu ?", "Comment allez-vous ?", "Quoi de neuf ?"],
+    "responses" : ["Bonjour. Que puis-je faire pour vous ?", "Bonjour. Comment puis-je vous aider ?", "Comment puis-je vous venir en aide ?"]
+    },
+
+    {"tag": "fin de discussion",
+    "patterns":["au revoir", "merci", "merci pour l'info", "merci pour les informations", "à la prochaine", " à bientôt", "cordialement", "bien cordialement", "en vous remerciant"],
+    "responses" : ["Au revoir !", "Merci à vous", "Merci d'avoir utilisé Skin.ai", "L'équipe Skin.ai vous remercie", "À bientôt", "En vous remerciant", "Je vous souhaite une belle journée"]
+    },
+
+    {"tag": "fonctionnement de l'application",
+    "patterns":["combien de temps pour obtenir un résultat d'analyse ?", "Le résultat est-il fiable ?", "quelles sont les différentes maladies reconnues par les algorithmes ?",
+                "Est-ce que l'IA de Skin.ai peut reconnaître n'importe quelle lésion de peau ?", "Qui peut uploader une photo ?", "Est-ce que l'application fonctionne avec des photos prises avec mon smartphone ?"],
+    "responses" : ["Le résultat d'analyse est généralement délivré en moins d'une minute.", "La fiabilité du résultat d'analyse dépend de plusieurs facteurs, notamment du type de maladie et de la qualité de la photo.", 
+                    "Skin.ai peut identifier 8 classes de lésions de la peau.", "L'image soumise à l'analyse sera classée dans l'une des 8 catégories de maladie de peau; kératose actinique", "Skin.ai s'adresse principalement à des dermatologues. Toutefois, si vous disposez d'un appareil vous permettant de prendre des photos dermatoscopiques vous pouvez utiliser l'application."]
+    },
+
+    {"tag": "mélanome",
+    "patterns":["Est-ce que le mélanome est grave ?"],
+    "responses" : ["Oui, le mélanome est le plus dangereux des cancers de la peau."]
+    }
+
+ 
+
+]}
