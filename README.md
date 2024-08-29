@@ -1,0 +1,1 @@
+Front and back end code for a skin cancer detection application built with Djnago. The SVM algorithms were trained on an ISIC skin lesion images dataset but could not be uploaded due to their file size.
